@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1" /> -->
+
     <style>
       body,
       html {
@@ -53,11 +54,18 @@
         letter-spacing: 10px;
       }
 
-      h3 {
+      h3.h3_1 {
         letter-spacing: 5px;
         text-transform: uppercase;
         font: 20px "Lato", sans-serif;
         color: #111;
+      }
+
+      h3.h3_2 {
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        font: 20px "Lato", sans-serif;
+        color: #fff;
       }
 
       /* Turn off parallax scrolling for tablets and phones */
@@ -68,13 +76,27 @@
           background-attachment: scroll;
         }
       }
+
+      section {
+        display: -webkit-flex;
+        display: flex;
+      }
+      article {
+        -webkit-flex: 3;
+        -ms-flex: 3;
+        flex: 3;
+        /* background-color: #f1f1f1; */
+        padding: 10px;
+      }
     </style>
   </head>
+
+
   
   <body>
     <div class="bgimg-1">
       <div class="caption">
-        <span class="border">SCROLL DOWN</span>
+        <span class="border">The Art and Heritage of India</span>
       </div>
     </div>
 
@@ -87,22 +109,22 @@
         text-align: justify;
       "
     >
-      <h3 style="text-align: center">Parallax Demo</h3>
-      <p>
-        Parallax scrolling is a web site trend where the background content is
-        moved at a different speed than the foreground content while scrolling.
-        Nascetur per nec posuere turpis, lectus nec libero turpis nunc at, sed
-        posuere mollis ullamcorper libero ante lectus, blandit pellentesque a,
-        magna turpis est sapien duis blandit dignissim. Viverra interdum mi
-        magna mi, morbi sociis. Condimentum dui ipsum consequat morbi, curabitur
-        aliquam pede, nullam vitae eu placerat eget et vehicula. Varius quisque
-        non molestie dolor, nunc nisl dapibus vestibulum at, sodales tincidunt
-        mauris ullamcorper, dapibus pulvinar, in in neque risus odio. Accumsan
-        fringilla vulputate at quibusdam sociis eleifend, aenean maecenas
-        vulputate, non id vehicula lorem mattis, ratione interdum sociis ornare.
-        Suscipit proin magna cras vel, non sit platea sit, maecenas ante augue
-        etiam maecenas, porta porttitor placerat leo.
-      </p>
+      <h3 class="h3_1" style="text-align: center">Title</h3>
+      <div>
+        <section>
+          <figure>
+            <img src="img_parallax.jpg" alt="Image" width="300," height="200" />
+          </figure>
+          <article>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. In sequi
+              culpa, veniam omnis eveniet maxime expedita dicta quisquam
+              reprehenderit quam atque voluptas velit nam. Tempora nam
+              recusandae rem maiores quisquam.
+            </p>
+          </article>
+        </section>
+      </div>
     </div>
 
     <div class="bgimg-2">
@@ -110,8 +132,9 @@
         <span
           class="border"
           style="background-color: transparent; font-size: 25px; color: #f7f7f7"
-          >LESS HEIGHT</span
         >
+          Site Name
+        </span>
       </div>
     </div>
 
@@ -125,10 +148,22 @@
           text-align: justify;
         "
       >
-        <p>
-          Scroll up and down to really get the feeling of how Parallax Scrolling
-          works.
-        </p>
+      <h3 class="h3_2" style="text-align: center">Title</h3>
+      <div>
+        <section>
+          <figure>
+            <img src="img_parallax.jpg" alt="Image" width="300," height="200" />
+          </figure>
+          <article>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. In sequi
+              culpa, veniam omnis eveniet maxime expedita dicta quisquam
+              reprehenderit quam atque voluptas velit nam. Tempora nam
+              recusandae rem maiores quisquam.
+            </p>
+          </article>
+        </section>
+      </div>
       </div>
     </div>
 
@@ -137,7 +172,9 @@
         <span
           class="border"
           style="background-color: transparent; font-size: 25px; color: #f7f7f7"
-          >SCROLL UP</span
+          >
+          Site Name
+          </span
         >
       </div>
     </div>
@@ -152,10 +189,22 @@
           text-align: justify;
         "
       >
-        <p>
-          Scroll up and down to really get the feeling of how Parallax Scrolling
-          works.
-        </p>
+      <h3 class="h3_2" style="text-align: center">Title</h3>
+      <div>
+        <section>
+          <figure>
+            <img src="img_parallax.jpg" alt="Image" width="300," height="200" />
+          </figure>
+          <article>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. In sequi
+              culpa, veniam omnis eveniet maxime expedita dicta quisquam
+              reprehenderit quam atque voluptas velit nam. Tempora nam
+              recusandae rem maiores quisquam.
+            </p>
+          </article>
+        </section>
+      </div>
       </div>
     </div>
 
