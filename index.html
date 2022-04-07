@@ -1,21 +1,138 @@
+<!DOCTYPE html>
 <html>
 
 <head>
-    <title>Flames Calculator</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sign in</title>
+  <link rel="stylesheet" href="Style1.css">
 </head>
 
 <body>
-    <div class="flames">
-        <h1>Karthiban Flames Calculator</h1>
-        <label class="inp">Karthiban</label>
-        <input class="inp" id="girl" type="text" placeholder="Enter Name">
-        <div class="heart">
-            <img src="heart.png" alt="Heart" onclick="calculate()">
-            <h2 id="out"></h2>
-        </div>
-    </div>
+  <div class="main">
+    <p class="sign" align="center">Sign in</p>
+    <form id="myform" class="form1">
+      <input class="un " type="text" align="center" placeholder="Username">
+      <input id="password" class="pass" type="password" align="center" placeholder="Password" required>
+
+      <a class="submit" align="center" onclick="check()">Sign in</a>
+
+      <p id="commen" class="commen" align="center">Find the Password</p>
+    </form>
+  </div>
+
+  <script>
+    function reverseString(str) {
+      var newStr = "";
+      for (var i = str.length - 1; i >= 0; i--) {
+        newStr += str[i];
+      }
+      return newStr;
+    }
+
+
+    function changeUpperEven(str) {
+      var newStr = "";
+      for (var i = 0; i < str.length; i++) {
+        if (i % 2 == 1 && !/[^a-zA-Z]/.test(str[i]))
+          newStr += str[i].toUpperCase();
+        else
+          newStr += str[i];
+      }
+      return newStr;
+    }
+
+    function changeUpperOdd(str) {
+      var newStr = "";
+      for (var i = 0; i < str.length; i++) {
+        if (i % 2 == 0 && !/[^a-zA-Z]/.test(str[i]))
+          newStr += str[i].toUpperCase();
+        else
+          newStr += str[i];
+      }
+      return newStr;
+    }
+
+    function spaceTo(str, a) {
+      var newStr = "";
+      for (var i = 0; i < str.length; i++) {
+        if (str[i] == " ")
+          newStr += a;
+        else
+          newStr += str[i];
+      }
+      return newStr;
+    }
+
+    function switchCase(str) {
+      var newStr = "";
+      for (var i = 0; i < str.length; i++) {
+        if (!/[^a-zA-Z]/.test(str[i])) {
+          if (str[i] == str[i].toLowerCase())
+            newStr += str[i].toUpperCase();
+          else
+            newStr += str[i].toLowerCase();
+        }
+        else
+          newStr += str[i];
+      }
+      return newStr;
+    }
+
+    function capitalize(str) {
+      var words = str.split(" ");
+      for (let i = 0; i < words.length; i++) {
+        words[i] = words[i][0].toUpperCase() + words[i].substr(1);
+      }
+      return words.join(" ");
+    }
+
+    function switchCaseVowels(str) {
+      var newStr = "";
+      for (var i = 0; i < str.length; i++) {
+        if (/[aeiouAEIOU]/.test(str[i])) {
+          if (str[i] == str[i].toLowerCase())
+            newStr += str[i].toUpperCase();
+          else
+            newStr += str[i].toLowerCase();
+        }
+        else
+          newStr += str[i];
+      }
+      return newStr;
+    }
+
+    function check() {
+      var typed = document.getElementById("password").value;
+      var ori = typed;
+
+      /* ================================================================= */
+      /* "typed" - The Password you type in page */
+      /* "password" - Is the Final Match */
+
+      /* "typed" will go through 3 functions that changes its string. */
+      /* Your goal is to find the ACTUAL PASSWORD using FINAL PASSWORD. */
+
+      /* Functions: */
+      typed = reverseString(typed); /* Reverse the String */
+      typed = changeUpperEven(typed); /* Change all characters at Even index to Uppercase */
+      typed = switchCase(typed); /* Changes Upper to Lower case and vice Versa */
+
+      /* Final Password: */
+      var password = "EmOcLeW";
+
+      /* ================================================================= */
+
+      /* console.log(typed); */
+      if (typed == password) {
+        document.getElementById("commen").innerHTML = "!!WELLDONE!!<br>Second Round Password: " + ori
+      }
+      else {
+        document.getElementById("commen").innerHTML = "Wrong Password, Try Again"
+      }
+    }
+  </script>
+  
 </body>
 
 </html>
