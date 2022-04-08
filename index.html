@@ -4,7 +4,7 @@
 <head>
   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sign in</title>
+  <title>Level 2</title>
   <link rel="stylesheet" href="Style1.css">
 </head>
 
@@ -30,72 +30,11 @@
       return newStr;
     }
 
-
-    function changeUpperEven(str) {
+    function replaceTo(str, a, b) {
       var newStr = "";
       for (var i = 0; i < str.length; i++) {
-        if (i % 2 == 1 && !/[^a-zA-Z]/.test(str[i]))
-          newStr += str[i].toUpperCase();
-        else
-          newStr += str[i];
-      }
-      return newStr;
-    }
-
-    function changeUpperOdd(str) {
-      var newStr = "";
-      for (var i = 0; i < str.length; i++) {
-        if (i % 2 == 0 && !/[^a-zA-Z]/.test(str[i]))
-          newStr += str[i].toUpperCase();
-        else
-          newStr += str[i];
-      }
-      return newStr;
-    }
-
-    function spaceTo(str, a) {
-      var newStr = "";
-      for (var i = 0; i < str.length; i++) {
-        if (str[i] == " ")
-          newStr += a;
-        else
-          newStr += str[i];
-      }
-      return newStr;
-    }
-
-    function switchCase(str) {
-      var newStr = "";
-      for (var i = 0; i < str.length; i++) {
-        if (!/[^a-zA-Z]/.test(str[i])) {
-          if (str[i] == str[i].toLowerCase())
-            newStr += str[i].toUpperCase();
-          else
-            newStr += str[i].toLowerCase();
-        }
-        else
-          newStr += str[i];
-      }
-      return newStr;
-    }
-
-    function capitalize(str) {
-      var words = str.split(" ");
-      for (let i = 0; i < words.length; i++) {
-        words[i] = words[i][0].toUpperCase() + words[i].substr(1);
-      }
-      return words.join(" ");
-    }
-
-    function switchCaseVowels(str) {
-      var newStr = "";
-      for (var i = 0; i < str.length; i++) {
-        if (/[aeiouAEIOU]/.test(str[i])) {
-          if (str[i] == str[i].toLowerCase())
-            newStr += str[i].toUpperCase();
-          else
-            newStr += str[i].toLowerCase();
-        }
+        if (str[i] == a)
+          newStr += b;
         else
           newStr += str[i];
       }
@@ -104,9 +43,11 @@
 
     function check() {
       var typed = document.getElementById("password").value;
+      console.log(typed);
       var ori = typed;
 
       /* ================================================================= */
+      /* Instructions */
       /* "typed" - The Password you type in page */
       /* "password" - Is the Final Match */
 
@@ -114,24 +55,26 @@
       /* Your goal is to find the ACTUAL PASSWORD using FINAL PASSWORD. */
 
       /* Functions: */
+      typed = replaceTo(typed, "n", "#"); /* Replace Second Argument with Third Argument */
+      typed = replaceTo(typed, " ", "a"); /* Replace Second Argument with Third Argument */
       typed = reverseString(typed); /* Reverse the String */
-      typed = changeUpperEven(typed); /* Change all characters at Even index to Uppercase */
-      typed = switchCase(typed); /* Changes Upper to Lower case and vice Versa */
+      typed = replaceTo(typed, "a", "@"); /* Replace Second Argument with Third Argument */
+
 
       /* Final Password: */
-      var password = "EmOcLeW";
+      var password = "sd#uorg@eltt@b@s#wo#k#u@rey@lp";
 
       /* ================================================================= */
 
-      /* console.log(typed); */
       if (typed == password) {
-        document.getElementById("commen").innerHTML = "!!WELLDONE!!<br>Second Round Password: " + ori
+        document.getElementById("commen").innerHTML = "!!WELLDONE!!<br>Second Round Password:<br>" + ori
       }
       else {
         document.getElementById("commen").innerHTML = "Wrong Password, Try Again"
       }
     }
   </script>
+  
 </body>
 
 </html>
